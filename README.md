@@ -17,3 +17,4 @@ En esta interpretación se añade la posibilidad de:
 - Python > 3
 - [pyproj](https://pypi.org/project/pyproj/) >= 2
 - [Flask](https://pypi.org/project/Flask/)
+- [numpy](https://pypi.org/project/numpy/)

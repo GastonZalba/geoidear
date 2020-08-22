@@ -1,4 +1,5 @@
 from pyproj import transform, Proj
+import numpy as np
 import json
 
 WGS84 = Proj(init="EPSG:4326") #WGS84 datum ellipsoid height
@@ -14,32 +15,26 @@ class Geoidear():
             data = self.createListFromString(data)
         finally:
             self.dataList = data
-    
+
     def processList(self):
-        converted = []
-        for i in self.dataList: 
-            converted.append(self.convert(i))
-        return converted
 
-    def convert(self, dlist):
-
-        lat = dlist[0]
-        lon = dlist[1]
-
-        # Si no hay elevación como parámetro, lo establecemos como 0
-        elev = dlist[2] if len(dlist) > 2 else 0
-
-        _lon, _lat, _elev = transform(WGS84, self.targetEPSG, lon, lat, elev)
+        _lon, _lat, _elev = transform(WGS84, self.targetEPSG, self.dataList[:,1], self.dataList[:,0], self.dataList[:,2])
         
-        # Redondeamos elevación en el tercer decimal igual que en la calculadora original
-        _elev = round(_elev,3)
+        # Redondeamos valores igual a la calculadora original
+        _elev = np.around(_elev, 3)
+        _lat = np.around( _lat, 6)
+        _lon = np.around(_lon, 6)
 
-        return [round(_lat,6), round(_lon,6), _elev] 
+        return np.dstack([_lat,_lon,_elev])[0] 
     
     def createListFromString(self, data):
         data = data.replace(',', ' ')
         data = data.splitlines()
         dataList = []
         for line in data:
-            dataList.append(line.split())
-        return dataList
+            values = line.split()
+            if len(values) < 3:
+                #si no hay elevación, la establecemos como 0
+                values.append(0)
+            dataList.append(values)
+        return np.array(dataList)

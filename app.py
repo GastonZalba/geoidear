@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, render_template, make_response
 from flask_talisman import Talisman
 from geoidear import Geoidear
-import json
 
 import mimetypes
 mimetypes.add_type('application/javascript', '.js')
