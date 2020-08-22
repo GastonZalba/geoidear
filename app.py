@@ -20,7 +20,7 @@ app.config['JSON_AS_ASCII'] = False
 
 @app.route('/', methods=['GET'])
 def root():
-    return render_template('index.html', version = '0.0.1')
+    return render_template('index.html', version = '0.0.2')
 
 @app.route('/convert', methods=['POST'])
 def convert():
@@ -48,7 +48,7 @@ def convert():
             return jsonify(result)
 
         else:
-            return jsonify(result)
+            return jsonify(result.tolist())
         
     except Exception as e:
         return jsonify({"message":"Ocurrió un error al procesar. " + str(e)}), 500

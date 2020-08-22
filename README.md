@@ -16,5 +16,7 @@ En esta interpretación se añade la posibilidad de:
 ## Requerimientos
 - Python > 3
 - [pyproj](https://pypi.org/project/pyproj/) >= 2
-- [Flask](https://pypi.org/project/Flask/)
 - [numpy](https://pypi.org/project/numpy/)
+- [Flask](https://pypi.org/project/Flask/)
+- [gunicorn](https://pypi.org/project/gunicorn/)
+- [flask-talisman](https://pypi.org/project/flask-talisman-rdil/)
