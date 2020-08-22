@@ -33,7 +33,7 @@
                     programáticamente sin utilizar el formulario online.
                 </p>
                 <br>
-                <p><b>En esta interpretación se añade la posibilidad de:</b></p>
+                <p><b>También se añade la posibilidad de:</b></p>
                 <ul>
                     <li>convertir las coordenadas suministradas (EPSG:4326) a valores POSGAR07.</li>
                     <li>ingresar un tercer parámetro en cada entrada con la elevación, obtienendo como resultado la
@@ -77,13 +77,11 @@
                                 <textarea name="data" rows="10" cols="50"
                                     placeholder="Latitud Longitud Elevación (opcional)"></textarea>
                                 <div>
+                                    <input type="submit" value="Procesar" name="submitForm">
                                     <input type="button" value="Ver ejemplo" id="fillExample">
                                     <input type="button" value="Limpiar" id="cleanForm">
                                 </div>
-                            </div>
-                            <div class="entry">
-                                <input type="submit" value="Procesar" name="submitForm">
-                            </div>
+                            </div>            
                             <div class="entry">
                                 <label>Resultado</label><button id="copyValues" title="Copiar al portapeles"><span
                                         class="icon-content_copy"></span></button>
@@ -105,11 +103,11 @@
                                     <li>
                                         <code
                                             class="tabbed">-35.406613    -60.772444<br>-37.875285    -62.885637    8</code>
-                                        - texto con espacios
+                                        - valores y espacios
                                     </li>
                                     <li>
                                         <code class="tabbed">-35.406613, -60.772444<br>-37.875285, -62.885637, 8</code>
-                                        - texto con comas
+                                        - valores y comas
                                     </li>
                                 </ul>
                             </li>
