@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="author" content="Gastón Zalba">
     <meta name="description" content="API que emula el funcionamiento de la calculadora online GEOIDE-AR 16 del IGN.">
     <meta name="keywords" content="geoid,geoidear,geoide-ar,IGN,POSGAR">
@@ -143,7 +145,7 @@
     <footer>
         <a href="https://github.com/GastonZalba/geoidear">Ver repositorio en GitHub</a> - Gastón Zalba
     </footer>
-    <script type="application/json" src="/static/app.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 
 </html>

@@ -1,16 +1,22 @@
 from flask import Flask, request, jsonify, render_template, make_response
-from flask_talisman import Talisman
+#from flask_talisman import Talisman
 from geoidear import Geoidear
 import json
 
 app = Flask(__name__)
-Talisman(app, content_security_policy={
-     'default-src': [
-         '\'self\'',
-         'https://fonts.googleapis.com',
-         'https://fonts.gstatic.com'            
-        ]
-})
+# Talisman(app, content_security_policy={
+#      'default-src': [
+#          '\'self\'',
+#          'https://fonts.googleapis.com',
+#          'https://fonts.gstatic.com'            
+#         ]
+# },
+# strict_transport_security=False,
+# feature_policy=False,
+# strict_transport_security_preload=False,
+# strict_transport_security_include_subdomains=False,
+# legacy_content_security_policy_header=False
+#)
 
 # add UTF-8 support:
 app.config['JSON_AS_ASCII'] = False
