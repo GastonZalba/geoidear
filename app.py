@@ -1,8 +1,16 @@
 from flask import Flask, request, jsonify, render_template, make_response
+from flask_talisman import Talisman
 from geoidear import Geoidear
 import json
 
 app = Flask(__name__)
+Talisman(app, content_security_policy={
+     'default-src': [
+         '\'self\'',
+         'https://fonts.googleapis.com',
+         'https://fonts.gstatic.com'            
+        ]
+})
 
 # add UTF-8 support:
 app.config['JSON_AS_ASCII'] = False
@@ -51,4 +59,4 @@ def createStringFromList(data):
     return dataString
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
