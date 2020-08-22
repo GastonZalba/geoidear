@@ -335,7 +335,6 @@ form button {
     color: #fff;
     border: 1px solid rgb(165 165 165);
     font-family: Consolas,"Courier New",monospace;
-    white-space: pre-wrap;
 }
 
 #results.error {
@@ -421,7 +420,9 @@ code.bigger {
 }
   
 @media only screen and (max-width: 959px) {
-
+    #content {
+        padding: 15px;
+    }
     form .entry .three,
     form .entry .two {
         width: 100%;
@@ -430,7 +431,26 @@ code.bigger {
 
     form .entry .three:not(:first-child),
     form .entry .two:not(:first-child){
-        margin: 35px 0 0;
+        margin: 20px 0 0;
     }
     
+}
+
+@media only screen and (max-width:768px) {
+    body {
+        font-size: 14px;
+    }
+    .intro{
+        padding: 0 10px;
+    }
+    .box {
+        padding: 20px 20px;
+        margin: 0px 0px 20px;
+    }
+    form .entry {
+        margin: 15px 0;
+    }
+    section {
+        padding: 4px; 
+    }
 }
